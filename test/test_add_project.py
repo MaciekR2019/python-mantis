@@ -5,5 +5,6 @@ def test_dodaj_projekt(app, data_projects):
     print("\nDodano projekt: ", project)
     new_projects = app.project.pobierz_liste_projektow()
     old_projects.append(project)
-    assert old_projects == new_projects
-
+    assert sorted(old_projects) == sorted(new_projects)
+    print(sorted(old_projects))
+    print(sorted(new_projects))

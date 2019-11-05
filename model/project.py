@@ -9,4 +9,8 @@ class Project:
         return "%s:%s" % (self.name, self.description)
 
     def __eq__(self, other):
-        return (self.name is None or other.name is None or self.name == other.name)
+        return self.name is None or other.name is None or self.name == other.name
+
+    def __lt__(self, other):
+        return self.name < other.name
+

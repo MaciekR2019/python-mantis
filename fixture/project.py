@@ -8,7 +8,6 @@ class ProjectHelper:
 
     def utworz(self, project):
         wd = self.app.wd
-        self.przejdz_do_zarzadzania()
         self.przejdz_do_zarzadzania_projektami()
         self.dodaj_projekt()
         self.wypelnij_dane_projektu(project)
