@@ -20,7 +20,7 @@ class SessionHelper:
 
     def jest_zalogowany(self):
         wd = self.app.wd
-        return len(wd.find_elements_by_link_text("Logout")) > 0
+        wd.current_url.endswith("account_page.php")
 
     def jest_zalogowany_jako(self, username):
         wd = self.app.wd
@@ -31,12 +31,10 @@ class SessionHelper:
         return wd.find_element_by_xpath("//li//a[contains(text(), 'administrator')]").text
 
     def ensure_wyloguj(self):
-        # wd = self.app.wd
         if self.jest_zalogowany():
             self.wyloguj()
 
     def ensure_zaloguj(self, username, password):
-        # wd = self.app.wd
         if self.jest_zalogowany():
             if self.jest_zalogowany_jako(username):
                 return
