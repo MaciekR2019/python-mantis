@@ -13,7 +13,7 @@ class Application:
             self.wd = webdriver.Ie()
         else:
             raise ValueError("Nierozpoznana przeglądarka %s" % browser)
-        # self.wd.implicitly_wait(5)
+        self.wd.implicitly_wait(5)
         self.wd.maximize_window()
         self.session = SessionHelper(self)
         self.project = ProjectHelper(self)

@@ -8,3 +8,5 @@ def test_dodaj_projekt(app, data_projects):
     assert sorted(old_projects) == sorted(new_projects)
     print(sorted(old_projects))
     print(sorted(new_projects))
+    print(app.session.get_logged_user())
+    print(app.session.jest_zalogowany())
